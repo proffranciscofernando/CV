@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Editor - Easy Update</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f5f5f5;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+        }
+
+        .button-secondary {
+            background: #6b7280;
+            margin-left: 0.5rem;
+        }
+
+        .button-secondary:hover {
+            background: #4b5563;
+        }
+
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .preview-note {
+            background: #dbeafe;
+            border: 1px solid #93c5fd;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-top: 2rem;
+            color: #1e40af;
+        }
+
+        .dynamic-section {
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .dynamic-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .remove-btn {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .remove-btn:hover {
+            background: #b91c1c;
+        }
+
+        .add-btn {
+            background: #059669;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .add-btn:hover {
+            background: #047857;
+        }
+
+        .output-area {
+            background: #1f2937;
+            color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.875rem;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 CV Editor</h1>
+        <p class="subtitle">Fill in your information below, then copy the generated code to data.js</p>
+
+        <!-- Personal Information -->
+        <div class="section">
+            <h2 class="section-title">Personal Information</h2>
+            <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" id="name" placeholder="Francisco Fernando">
+            </div>
+            <div class="form-group">
+                <label>Job Title *</label>
+                <input type="text" id="title" placeholder="Software Engineer">
+            </div>
+            <div class="form-group">
+                <label>Email *</label>
+                <input type="email" id="email" placeholder="your.email@example.com">
+            </div>
+            <div class="form-group">
+                <label>LinkedIn URL</label>
+                <input type="text" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+            </div>
+            <div class="form-group">
+                <label>GitHub URL</label>
+                <input type="text" id="github" placeholder="https://github.com/yourprofile">
+            </div>
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" id="location" placeholder="Your City, Country">
+            </div>
+            <div class="form-group">
+                <label>Professional Summary *</label>
+                <textarea id="summary" placeholder="Brief summary about yourself..."></textarea>
+            </div>
+        </div>
+
+        <!-- Generate Button -->
+        <div class="actions">
+            <button class="button" onclick="generateDataJS()">🚀 Generate data.js</button>
+            <button class="button button-secondary" onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+        </div>
+
+        <!-- Output -->
+        <div id="output-section" style="display: none; margin-top: 2rem;">
+            <h2 class="section-title">Generated Code</h2>
+            <p style="margin-bottom: 1rem; color: #6b7280;">Copy this code and replace the contents of your <code>data.js</code> file:</p>
+            <div class="output-area" id="output"></div>
+        </div>
+
+        <div class="preview-note">
+            <strong>💡 Quick Start:</strong> Fill in at least the Personal Information fields above, then click "Generate data.js". 
+            Copy the generated code and paste it into your <code>data.js</code> file. 
+            For experience, skills, education, and projects - you can edit them directly in the <code>data.js</code> file using the examples provided.
+        </div>
+    </div>
+
+    <script>
+        function generateDataJS() {
+            const name = document.getElementById('name').value || 'Francisco Fernando';
+            const title = document.getElementById('title').value || 'Software Engineer';
+            const email = document.getElementById('email').value || 'your.email@example.com';
+            const linkedin = document.getElementById('linkedin').value || 'https://linkedin.com/in/yourprofile';
+            const github = document.getElementById('github').value || 'https://github.com/yourprofile';
+            const location = document.getElementById('location').value || 'Your City, Country';
+            const summary = document.getElementById('summary').value || 'Passionate software engineer with expertise in building scalable applications.';
+
+            const code = `// CV Data - Easy to Update!
+// Simply edit the information below to update your CV
+
+const cvData = {
+    // Personal Information
+    personal: {
+        name: "${name}",
+        title: "${title}",
+        email: "${email}",
+        linkedin: "${linkedin}",
+        github: "${github}",
+        location: "${location}",
+        summary: "${summary}"
+    },
+
+    // Work Experience
+    experience: [
+        {
+            position: "Senior Software Engineer",
+            company: "Tech Company Inc.",
+            period: "2022 - Present",
+            description: "Leading development of cloud-native applications.",
+            highlights: [
+                "Architected and implemented microservices infrastructure",
+                "Reduced application load time by 40%",
+                "Led a team of 5 developers"
+            ]
+        },
+        // Add more experience items here
+    ],
+
+    // Skills (organized by category)
+    skills: [
+        {
+            category: "Languages",
+            icon: "💻",
+            items: ["JavaScript", "TypeScript", "Python", "Java"]
+        },
+        {
+            category: "Frontend",
+            icon: "🎨",
+            items: ["React", "Vue.js", "HTML5", "CSS3"]
+        },
+        {
+            category: "Backend",
+            icon: "⚙️",
+            items: ["Node.js", "Express", "REST APIs"]
+        },
+        // Add more skill categories here
+    ],
+
+    // Education
+    education: [
+        {
+            degree: "Bachelor of Science in Computer Science",
+            institution: "University Name",
+            period: "2014 - 2018",
+            description: "Specialized in Software Engineering. GPA: 3.8/4.0"
+        },
+        // Add more education items here
+    ],
+
+    // Projects
+    projects: [
+        {
+            name: "Project Name",
+            description: "Brief description of your project",
+            tech: ["React", "Node.js", "MongoDB"],
+            link: "https://github.com/yourprofile/project"
+        },
+        // Add more projects here
+    ]
+};
+
+// Make data globally available
+window.cvData = cvData;`;
+
+            document.getElementById('output').textContent = code;
+            document.getElementById('output-section').style.display = 'block';
+            document.getElementById('output-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyToClipboard() {
+            const output = document.getElementById('output').textContent;
+            navigator.clipboard.writeText(output).then(() => {
+                alert('✅ Code copied to clipboard! Now paste it into your data.js file.');
+            }).catch(err => {
+                alert('❌ Failed to copy. Please select and copy manually.');
+            });
+        }
+    </script>
+</body>
+</html>
+
