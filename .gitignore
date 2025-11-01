@@ -7,3 +7,9 @@
 .kiro/steering/byterover-rules.md
 .qoder/rules/byterover-rules.md
 .augment/rules/byterover-rules.md
+
+.git
+.github
+node_modules
+.DS_Store
+*.log
