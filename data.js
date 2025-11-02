@@ -61,7 +61,7 @@ const cvData = {
             position: "Postdoctoral Fellow",
             company: "University of São Paulo (USP)",
             period: "January 2020 - December 2020",
-            description: "Plan and conduct controlled experiments to validate hypotheses and develop technical solutions.",
+            description: "Main activities:",
             highlights: [
                 "Plan and conduct controlled experiments to validate hypotheses and develop technical solutions",
                 "Utilize specialized computational simulation software to predict outcomes and optimize project performance",
