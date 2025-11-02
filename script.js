@@ -183,15 +183,27 @@ function populateProjects(projects) {
             .map(tech => `<span class="tech-tag">${tech}</span>`)
             .join('');
 
+        let highlightsHTML = '';
+        if (project.highlights && project.highlights.length > 0) {
+            highlightsHTML = `
+                <ul>
+                    ${project.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        const linkHTML = project.link 
+            ? `<a href="${project.link}" target="_blank" class="project-link">View Project →</a>`
+            : '';
+
         projectItem.innerHTML = `
             <h3>${project.name}</h3>
             <p class="description">${project.description}</p>
+            ${highlightsHTML}
             <div class="tech-stack">
                 ${techStackHTML}
             </div>
-            <a href="${project.link}" target="_blank" class="project-link">
-                View Project →
-            </a>
+            ${linkHTML}
         `;
 
         container.appendChild(projectItem);
