@@ -5,21 +5,21 @@ const cvData = {
     // Personal Information
     personal: {
         name: "Francisco Fernando Roberto Pereira",
-        title: "AI Researcher & Data Scientist",
+        title: "AI Engineer & Data Scientist",
         email: "francisco.fernando@ufpe.br",
         linkedin: "https://www.linkedin.com/in/engfranciscofernando/",
         github: "https://github.com/proffranciscofernando",
         location: "João Pessoa, Brazil",
-        summary: "Passionate AI researcher and data scientist with expertise in machine learning, data analysis, and AI applications. PhD in Materials Science and Metallurgy from University of Cambridge. Committed to advancing AI technology and delivering innovative solutions for real-world problems."
+        summary: "Areas of expertise include machine learning, data analysis, and LLM frameworks for building AI-powered applications."
     },
 
     // Work Experience
     experience: [
         {
-            position: "AI Researcher",
+            position: "AI Engineer",
             company: "Progress Rail, a Caterpillar Company",
-            period: "June 2025 - Present",
-            description: "Design and develop context-aware AI chatbots leveraging frameworks such as LangChain, LangGraph, and others.",
+            period: "July 2025 - Present",
+            description: "Main activities:",
             highlights: [
                 "Design and develop context-aware AI chatbots leveraging frameworks such as LangChain, LangGraph, and others",
                 "Integrate LLMs and agentic frameworks into scalable products to improve functionality and user experience",
@@ -30,10 +30,10 @@ const cvData = {
             ]
         },
         {
-            position: "AI Researcher, Data Scientist and Lecturer",
+            position: "AI Engineer, Lecturer and Researcher",
             company: "Federal University of Pernambuco (UFPE)",
-            period: "November 2020 - May 2025",
-            description: "Design and conduct research in AI Applications targeting industry problems.",
+            period: "December 2020 - June 2025",
+            description: "Main activities:",
             highlights: [
                 "Design and conduct research in AI Applications targeting industry problems",
                 "Design and structure course content for Data Science and Engineering, integrating foundational topics such as differential calculus, linear algebra and machine learning",
@@ -44,24 +44,10 @@ const cvData = {
             ]
         },
         {
-            position: "Postdoctoral Fellow",
-            company: "Pontifical Catholic University of Rio de Janeiro (PUC-Rio)",
-            period: "August 2023 - May 2024",
-            description: "Clean and preprocess over 30GB of raw data from open-source government database.",
-            highlights: [
-                "Clean and preprocess over 30GB of raw data from open-source government database",
-                "Develop and refine socio-economic indicators, attendance rates, and subject-specific scores (Mathematics, English, and Writing) along with other critical variables to enhance data analysis",
-                "Implement LLM API integration to allow users to explore insights through natural language queries",
-                "Fine-tune API temperature settings and apply prompt filtering to enhance accuracy, relevance, and reliability of responses",
-                "Build a user-friendly, interactive web platform, freely accessible to the public",
-                "Skills: Data Preprocessing and Cleaning, LLM APIs, Web Development, Backend Processing, and Cloud Deployment"
-            ]
-        },
-        {
             position: "Junior Data Scientist",
             company: "Pontifical Catholic University of Rio de Janeiro (PUC-Rio)",
-            period: "August 2023 - May 2024",
-            description: "Clean and prepare data to identify patterns and generate insights.",
+            period: "September 2023 - June 2024",
+            description: "Main activities:",
             highlights: [
                 "Clean and prepare data to identify patterns and generate insights",
                 "Create interactive visualizations to communicate results, following best practices in design and perception",
@@ -74,7 +60,7 @@ const cvData = {
         {
             position: "Postdoctoral Fellow",
             company: "University of São Paulo (USP)",
-            period: "January 2020 - July 2020",
+            period: "January 2020 - December 2020",
             description: "Plan and conduct controlled experiments to validate hypotheses and develop technical solutions.",
             highlights: [
                 "Plan and conduct controlled experiments to validate hypotheses and develop technical solutions",
@@ -88,8 +74,8 @@ const cvData = {
         {
             position: "Exchange and Internship Program",
             company: "University of Kentucky",
-            period: "July 2011 - November 2011",
-            description: "Participate in an intensive English language program at the Language Centre, focusing on technical and academic communication skills.",
+            period: "August 2011 - December 2011",
+            description: "Main activities:",
             highlights: [
                 "Participate in an intensive English language program at the Language Centre, focusing on technical and academic communication skills",
                 "Engage in classes and academic activities with graduate students",
@@ -103,7 +89,7 @@ const cvData = {
         {
             category: "Programming Languages",
             icon: "💻",
-            items: ["Python", "SQL", "R", "MATLAB", "JavaScript"]
+            items: ["Python", "SQL"]
         },
         {
             category: "AI & Machine Learning",
@@ -123,12 +109,12 @@ const cvData = {
         {
             category: "Web Development",
             icon: "🌐",
-            items: ["Web Development", "Backend Processing", "Cloud Deployment", "API Integration", "Interactive Dashboards"]
+            items: ["Backend Processing", "Cloud Deployment", "API Integration"]
         },
         {
             category: "Tools & Platforms",
             icon: "🛠️",
-            items: ["PyCharm", "GitHub", "Jupyter Notebooks", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "PyTorch"]
+            items: ["PyCharm", "Cursor", "VS Code", "GitHub Copilot", "AWS Bedrock", "Open WebUI", "Git Version Control", "Jupyter Notebooks"]
         }
     ],
 
@@ -137,13 +123,13 @@ const cvData = {
         {
             degree: "Postgraduate Diploma in Data Science and Analytics",
             institution: "Pontifical Catholic University of Rio de Janeiro",
-            period: "August 2023 - May 2024",
-            description: "Coursework: Python, PyCharm, Databricks, SQL, LLM APIs, GitHub"
+            period: "September 2023 - June 2024",
+            description: "Coursework: Python, PyCharm, Databricks, SQL, GitHub, Machine Learning, Data Analytics, LLM Frameworks and APIs."
         },
         {
             degree: "PhD in Materials Science and Metallurgy",
             institution: "University of Cambridge",
-            period: "January 2015 - May 2019",
+            period: "January 2015 - April 2019",
             description: "Main activities: Research and Design of Experiments, Data Processing, Computational Modelling, and Implementation of Optimization Algorithms",
             thesis: {
                 title: "Extraction of Superelastic Parameter Values from Instrumented Indentation Data",
@@ -160,13 +146,13 @@ const cvData = {
         {
             degree: "Master of Science in Mechanical Engineering",
             institution: "Federal University of Campina Grande",
-            period: "January 2013 - March 2014",
+            period: "January 2013 - December 2014",
             description: "Main activities: Research, Design of Experiments, Data Processing, and Advanced Statistical Analysis"
         },
         {
             degree: "Bachelor of Science in Mechanical Engineering",
             institution: "Federal University of Campina Grande",
-            period: "April 2007 - November 2012",
+            period: "April 2007 - December 2012",
             description: "Coursework: Differential Calculus, Physics, Statistics, and Principles of Design"
         }
     ],
@@ -175,8 +161,8 @@ const cvData = {
     languages: [
         {
             name: "English",
-            level: "Native",
-            proficiency: 5
+            level: "Fluent",
+            proficiency: 4
         },
         {
             name: "Spanish", 
@@ -193,10 +179,20 @@ const cvData = {
     // Projects
     projects: [
         {
+            name: "AI-Powered Inventory Analytics System for Global Rail Company",
+            description: "Developed a Reasoning Mind (RM) architecture for a global rail company facing billions in excess/obsolete inventory across multiple facilities. Key achievements:",
+            highlights: [
+                "Enabled inventory specialists to query complex inventory relationships via natural language, receiving deterministic, mathematically accurate answers instead of probabilistic approximations",
+                "Three-phase system where LLM generates Python algorithms from queries, validation ensures correctness, Python interpreter executes against real data (Snowflake/multiple systems), then LLM synthesizes responses grounded in verified results",
+                "Prevented LLM hallucinations on numerical calculations, captured tribal domain knowledge, handled data heterogeneity, implemented concurrent user performance with thread-based concurrency",
+                "Open WebUI interface, data transparency with exportable verification datasets, Git-versioned domain knowledge repository"
+            ],
+            tech: ["Python", "LLM APIs", "LangChain", "Snowflake", "SQL", "Web Development", "Reasoning Architectures", "Computational Semiotics"]
+        },
+        {
             name: "AI-Powered Web Platform for High School National Exam Data",
-            description: "This project uses open data from the Brazilian High School National Exam to build a free AI-powered platform for exploring educational trends, regional disparities, and socio-economic factors through natural language queries.",
-            tech: ["Python", "LLM APIs", "Web Development", "Data Preprocessing", "Cloud Deployment"],
-            link: "https://github.com/proffranciscofernando/DataScience-PUCRio-MVP3"
+            description: "Developed a web platform that processes over 30GB of raw data from the Brazilian High School National Exam. The platform enables users to explore educational trends, regional disparities, and socio-economic factors through natural language queries powered by LLM API integration. Implemented fine-tuned temperature settings and prompt filtering to enhance response accuracy, relevance, and reliability. Features include socio-economic indicators, attendance rates, and performance metrics.",
+            tech: ["Python", "LLM APIs", "Web Development", "Data Preprocessing", "Cloud Deployment"]
         },
         {
             name: "Wind Energy Data Management",
